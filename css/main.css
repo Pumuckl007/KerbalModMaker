@@ -1,0 +1,55 @@
+#editor{
+  margin: 0px;
+  height: 100%;
+  background-color: #F5F5F5;
+}
+#mainmenubar{
+  margin: 0px;
+  height: 25px;
+  border-style: solid;
+  border-color: #070707;
+  border-width: 0px;
+  border-bottom-width: 1px;
+}
+.buttonmenutop{
+  border-radius: 0px;
+  border-style: solid;
+  border-color: #070707;
+  border-width: 1px;
+  height: 21px;
+  width: 50px;
+  margin-top: 2px;
+  transition: background-color 400ms;
+  transition: border-radius 400ms;
+}
+.buttonmenutop:hover{
+  border-radius :10px;
+}
+#newbutton{
+  color: #050505;
+  background-color: #22CC22;
+}
+#newbutton:hover{
+  background-color: #0F0;
+}
+#openbutton{
+  color: #050505;
+  background-color: #FFB300;
+}
+#openbutton:hover{
+  background-color: #FED457;
+}
+#savebutton{
+  color: #F4F4F4;
+  background-color: #1144B3;
+}
+#savebutton:hover{
+  background-color: #1288FF;
+}
+#sidebar{
+  background-color: #DDD;
+  position: absolute;
+  top: 26px;
+  bottom: 0px;
+  width: 100px;
+}
