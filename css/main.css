@@ -19,11 +19,20 @@
   height: 21px;
   width: 50px;
   margin-top: 2px;
+  margin-left: 2px;
   transition: background-color 400ms;
   transition: border-radius 400ms;
 }
 .buttonmenutop:hover{
   border-radius :10px;
+}
+.noselect{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #newbutton{
   color: #050505;
@@ -46,10 +55,47 @@
 #savebutton:hover{
   background-color: #1288FF;
 }
+#delbutton{
+  color: #050505;
+  background-color: #C11;
+}
+#delbutton:hover{
+  background-color: #FA1A1A;
+}
 #sidebar{
   background-color: #DDD;
   position: absolute;
   top: 26px;
   bottom: 0px;
   width: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-style: solid;
+  border-color: #070707;
+  border-width: 0px;
+  border-right-width: 1px;
+}
+#addbuttons{
+  margin-left:100px;
+  height: 25px;
+  border-style: solid;
+  border-color: #070707;
+  border-width: 0px;
+  border-bottom-width: 1px;
+}
+#mainwindow{
+  position: absolute;
+  top: 52px;
+  left:101px;
+  bottom: 0px;
+  right: 0px;
+  background-color:#FAFAFA
+}
+.backgroundmainwindow{
+  position: absolute;
+  top: 0px;
+  left:0px;
+  bottom: 0px;
+  right: 0px;
+  background-color:#FAFAFA
 }

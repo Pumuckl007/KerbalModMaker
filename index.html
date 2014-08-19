@@ -4,15 +4,49 @@
     <title>Kerbal Mod Maker</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tree.css">
   </head>
   <body>
+    <script src="js/View.js"></script>
     <div id="editor">
-      <div id="mainmenubar">
+      <div id="mainmenubar" class ="noselect">
         <button id="newbutton" class="buttonmenutop">New</button>
         <button id="openbutton" class="buttonmenutop">Open</button>
         <button id="savebutton" class="buttonmenutop">Save</button>
       </div>
-      <div id="sidebar">
+      <div id="sidebar" class="noselect">
+        <ul class="tree">
+        	<li>Engiens
+        		<ul>
+        			<li>Mrk1</li>
+        			<li>Mrk2</li>
+        			<li>Mrk3</li>
+        		</ul>
+        	</li>
+        	<li>Wings
+        		<ul>
+        			<li>Delta
+        				<ul>
+        					<li>Small</li>
+        					<li>Large</li>
+        				</ul>
+        			</li>
+        			<li>Sailwing</li>
+        		</ul>
+        	</li>
+        </ul>
+      </div>
+      <div id="addbuttons" class="noselect">
+        <button id="newbutton" class="buttonmenutop">Add</button>
+        <button id="delbutton" class="buttonmenutop">Delete</button>
+      </div>
+      <div id="mainwindow">
+        <div id="partPage" class="backgroundmainwindow">
+          <form>
+            Name :
+            <input type="text" value="Untitled" onchange="View.creatEvent('Name', this.value)">
+          </form>
+        </div>
       </div>
     </div>
   </body>
