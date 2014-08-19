@@ -1,13 +1,25 @@
 <!doctype html>
 <html>
   <head>
+
+    <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.0.0/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-2.0.0/jasmine.css">
+
+    <script type="text/javascript" src="jasmine/lib/jasmine-2.0.0/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine-2.0.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine-2.0.0/boot.js"></script>
+
     <title>Kerbal Mod Maker</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/tree.css">
+    <script src="lib/minievents.js"></script>
   </head>
   <body>
-    <script src="js/View.js"></script>
+    <script>window.kerbalModMaker = []</script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controler.js"></script>
     <div id="editor">
       <div id="mainmenubar" class ="noselect">
         <button id="newbutton" class="buttonmenutop">New</button>
@@ -41,10 +53,10 @@
         <button id="delbutton" class="buttonmenutop">Delete</button>
       </div>
       <div id="mainwindow">
-        <div id="partPage" class="backgroundmainwindow">
+        <div id="partEditor" class="backgroundmainwindow">
           <form>
             Name :
-            <input type="text" value="Untitled" onchange="View.creatEvent('Name', this.value)">
+            <input id="partEditorName" class="input" type="text" value="Untitled" onchange="eventManager.emit('partEditorNameChange', this)">
           </form>
         </div>
       </div>
