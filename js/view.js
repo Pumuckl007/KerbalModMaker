@@ -1,15 +1,9 @@
-(function(){
-  kerbalModMaker.modView = this;
-  this.elements = new Array;
-  this.addElement = function(catagory, elementName){
-    elements.push({Catagory:catagory, ElementName:elementName})
-  }
-  this.removeElement = function(elementName){
-    for(var i = 0; i < elements.length; i++){
-      if(elements[i].elementName = elementName){
-        elements.splice(i, 1);
-        return;
-      }
+kerbalModMaker.view = [];
+kerbalModMaker.view.parts = new Array();
+kerbalModMaker.module = angular.module('kerbalModMaker', []);
+kerbalModMaker.module.controller('PartListController', ['$scope', function($scope) {
+    $scope.parts = kerbalModMaker.view.parts;
+    $scope.addPart = function(partName){
+      $scope.parts.push(partName);
     }
-  }
-})()
+  }]);

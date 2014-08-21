@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="kerbalModMaker">
   <head>
 
     <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.0.0/jasmine_favicon.png">
@@ -12,45 +12,24 @@
     <title>Kerbal Mod Maker</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/tree.css">
     <script src="lib/minievents.js"></script>
   </head>
   <body>
-    <script>window.kerbalModMaker = []</script>
-    <script src="js/model.js"></script>
-    <script src="js/view.js"></script>
-    <script src="js/controler.js"></script>
     <div id="editor">
       <div id="mainmenubar" class ="noselect">
         <button id="newbutton" class="buttonmenutop">New</button>
         <button id="openbutton" class="buttonmenutop">Open</button>
         <button id="savebutton" class="buttonmenutop">Save</button>
       </div>
-      <div id="sidebar" class="noselect">
-        <ul class="tree">
-        	<li>Engiens
-        		<ul>
-        			<li>Mrk1</li>
-        			<li>Mrk2</li>
-        			<li>Mrk3</li>
-        		</ul>
-        	</li>
-        	<li>Wings
-        		<ul>
-        			<li>Delta
-        				<ul>
-        					<li>Small</li>
-        					<li>Large</li>
-        				</ul>
-        			</li>
-        			<li>Sailwing</li>
-        		</ul>
+      <div id="sidebar" class="noselect" ng-controller="PartListController">
+        <ul id="sidebarMenu" class="Grid" >
+        	<li ng-repeat="part in view.Parts | orderBy:'toString()'" onclick="eventManager.emit('changeToPart', this.textContent.trim())">{{part}}
         	</li>
         </ul>
       </div>
       <div id="addbuttons" class="noselect">
-        <button id="newbutton" class="buttonmenutop">Add</button>
-        <button id="delbutton" class="buttonmenutop">Delete</button>
+        <button id="newbutton" class="buttonmenutop" onchange="eventManager.emit('newPartButtonPressed', this);">Add</button>
+        <button id="delbutton" class="buttonmenutop" onClick="">Delete</button>
       </div>
       <div id="mainwindow">
         <div id="partEditor" class="backgroundmainwindow">
@@ -61,5 +40,9 @@
         </div>
       </div>
     </div>
+    <script src="lib/angular.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controler.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-describe("Player", function() {
+describe("kerbalModMaker", function() {
   var player;
   var song;
 

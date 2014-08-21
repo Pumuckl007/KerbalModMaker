@@ -67,7 +67,7 @@
   position: absolute;
   top: 26px;
   bottom: 0px;
-  width: 100px;
+  width: 150px;
   overflow-y: auto;
   overflow-x: hidden;
   border-style: solid;
@@ -76,7 +76,7 @@
   border-right-width: 1px;
 }
 #addbuttons{
-  margin-left:100px;
+  margin-left:150px;
   height: 25px;
   border-style: solid;
   border-color: #070707;
@@ -86,7 +86,7 @@
 #mainwindow{
   position: absolute;
   top: 52px;
-  left:101px;
+  left:151px;
   bottom: 0px;
   right: 0px;
   background-color:#FAFAFA
