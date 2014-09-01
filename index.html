@@ -23,24 +23,22 @@
       </div>
       <div id="sidebar" class="noselect" ng-controller="PartListController">
         <ul id="sidebarMenu" class="Grid" >
-        	<li ng-repeat="part in view.Parts | orderBy:'toString()'" onclick="eventManager.emit('changeToPart', this.textContent.trim())">{{part}}
+        	<li ng-repeat="part in parts | orderBy:'name.toString()'" onclick="eventManager.emit('changeToPart', this.textContent.trim())">{{part.name}}
         	</li>
         </ul>
       </div>
       <div id="addbuttons" class="noselect">
-        <button id="newbutton" class="buttonmenutop" onchange="eventManager.emit('newPartButtonPressed', this);">Add</button>
-        <button id="delbutton" class="buttonmenutop" onClick="">Delete</button>
+        <button id="newbutton" class="buttonmenutop" onclick="eventManager.emit('newPartButtonPressed', this);">Add</button>
+        <button id="delbutton" class="buttonmenutop" onclick="">Remove</button>
       </div>
       <div id="mainwindow">
-        <div id="partEditor" class="backgroundmainwindow">
-          <form>
-            Name :
-            <input id="partEditorName" class="input" type="text" value="Untitled" onchange="eventManager.emit('partEditorNameChange', this)">
-          </form>
+        <div id="partEditor" class="backgroundmainwindow" ng-view>
+
         </div>
       </div>
     </div>
     <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
     <script src="js/model.js"></script>
     <script src="js/view.js"></script>
     <script src="js/controler.js"></script>
